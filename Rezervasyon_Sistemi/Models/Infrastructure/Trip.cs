@@ -20,15 +20,20 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
                 return Data_Storage.routes.Where(r => r.BigRouteId == BigRouteId).FirstOrDefault();
             }}
         //tarih
-        public DateTime date{ get; set; }
+        public DateTime date { get; set; }
         
         //fiyat
-        public double Price { get; set; }
-        
+        public double Price { get; set; } = -1;
+
         //Gidiş Yolu mu Dönüş yolu mu
-        public bool IsStraight { get; set; }
 
-
-
+        public Trip(int tripId, VehicleType vehicleType, int bigRouteId, DateTime date, double price)
+        {
+            this.tripId = tripId;
+            VehicleType = vehicleType;
+            BigRouteId = bigRouteId;
+            this.date = date;
+            Price = price;
+        }
     }
 }

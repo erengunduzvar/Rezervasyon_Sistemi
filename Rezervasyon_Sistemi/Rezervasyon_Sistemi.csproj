@@ -68,6 +68,8 @@
     <Compile Include="Interfaces\IProfitable.cs" />
     <Compile Include="Interfaces\IReservable.cs" />
     <Compile Include="Models\Econ\Expense.cs" />
+    <Compile Include="Models\Econ\StaticFuelCosts.cs" />
+    <Compile Include="Models\Econ\StaticPersonalExpenses.cs" />
     <Compile Include="Models\Infrastructure\Route.cs" />
     <Compile Include="Models\Infrastructure\Trip.cs" />
     <Compile Include="Models\Users\Admin.cs" />

@@ -18,6 +18,7 @@ namespace Rezervasyon_Sistemi.Forms
     {
         public LoginForm()
         {
+            
             InitializeComponent();
         }
 
@@ -99,10 +100,7 @@ namespace Rezervasyon_Sistemi.Forms
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Yakıt Gideri: "+ExpensePrice.CalculateFuelPrice("A", new Bus(), 100));
-            Console.WriteLine("Çalışan Gideri: " + ExpensePrice.CalculateWorkerExpense("A", new Bus(), 100));
 
-            AllRoute allRoute = new AllRoute();
 
         }
     }

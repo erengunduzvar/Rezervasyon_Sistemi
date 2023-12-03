@@ -70,7 +70,7 @@
             this.firmaToolStripMenuItem,
             this.kullanıcıToolStripMenuItem,
             this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 3);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 3);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
