@@ -42,7 +42,7 @@ namespace Rezervasyon_Sistemi.Models.Econ
                     break;
             }
 
-            return totalPersonelExpense;
+            return totalPersonelExpense *2;
 
         }
 

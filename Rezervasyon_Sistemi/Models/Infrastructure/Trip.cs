@@ -8,7 +8,10 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
 {
     public class Trip
     {
-        public int tripId { get; set; }
+        //Counter ekleme eklenecek
+        static int tripIdCounter = 0;
+        //static
+        public int tripId { get;}
 
         //Arac Turu
         public VehicleType VehicleType { get; set; }
@@ -27,9 +30,10 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
 
         //Gidiş Yolu mu Dönüş yolu mu
 
-        public Trip(int tripId, VehicleType vehicleType, int bigRouteId, DateTime date, double price)
+        public Trip( VehicleType vehicleType, int bigRouteId, DateTime date, double price)
         {
-            this.tripId = tripId;
+            tripIdCounter++;
+            this.tripId = tripIdCounter;
             VehicleType = vehicleType;
             BigRouteId = bigRouteId;
             this.date = date;

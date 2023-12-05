@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rezervasyon_Sistemi.Identification;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,8 @@ namespace Rezervasyon_Sistemi.Interfaces
 {
     public interface IReservable
     {
-        bool isReserved(string seat_data);
-        bool reserveSeat(string seat_data);
-        bool cancelSeat(string seat_data);
+        List<int> AnyTransportValid(string startPos, string endPos, DateTime dateTime);
+        bool reserveSeat(Passenger passenger, DateTime dateTime);
+        bool cancelSeat(Reservation reservation);
     }
 }

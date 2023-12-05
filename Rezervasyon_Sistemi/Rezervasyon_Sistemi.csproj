@@ -52,6 +52,12 @@
     <Compile Include="Forms\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChooseTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChooseTrip.Designer.cs">
+      <DependentUpon>ChooseTrip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CompanyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,18 @@
     <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReserveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReserveForm.Designer.cs">
+      <DependentUpon>ReserveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Identification\Passenger.cs" />
+    <Compile Include="Models\Identification\Person.cs" />
+    <Compile Include="Models\Identification\Personel.cs" />
+    <Compile Include="Models\Identification\Reservation.cs" />
+    <Compile Include="Models\Identification\TransferPoints.cs" />
+    <Compile Include="Models\Identification\Transport.cs" />
     <Compile Include="Interfaces\ILoginable.cs" />
     <Compile Include="Interfaces\IProfitable.cs" />
     <Compile Include="Interfaces\IReservable.cs" />
@@ -82,14 +100,21 @@
     <Compile Include="Models\Vehicles\Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Services.cs" />
     <EmbeddedResource Include="Forms\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChooseTrip.resx">
+      <DependentUpon>ChooseTrip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReserveForm.resx">
+      <DependentUpon>ReserveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -113,6 +139,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Img\seat.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

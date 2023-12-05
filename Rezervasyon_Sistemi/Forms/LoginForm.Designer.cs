@@ -50,12 +50,24 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.user_panel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.startPosComboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.user_panel = new System.Windows.Forms.Panel();
+            this.tripSearchButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.vehicleTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dateComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.endPosComboBox = new System.Windows.Forms.ComboBox();
+            this.passangerCounterNum = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.admin_panel.SuspendLayout();
             this.firma_panel.SuspendLayout();
             this.user_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passangerCounterNum)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -275,8 +287,54 @@
             this.textBox4.Size = new System.Drawing.Size(261, 20);
             this.textBox4.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Location = new System.Drawing.Point(333, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 37);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Bilet Al";
+            // 
+            // startPosComboBox
+            // 
+            this.startPosComboBox.FormattingEnabled = true;
+            this.startPosComboBox.Items.AddRange(new object[] {
+            "İstanbul",
+            "Kocaeli",
+            "Bilecik",
+            "Ankara",
+            "Eskişehir",
+            "Konya"});
+            this.startPosComboBox.Location = new System.Drawing.Point(194, 205);
+            this.startPosComboBox.Name = "startPosComboBox";
+            this.startPosComboBox.Size = new System.Drawing.Size(187, 21);
+            this.startPosComboBox.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label9.Location = new System.Drawing.Point(211, 182);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(152, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Başlangıç Noktası";
+            // 
             // user_panel
             // 
+            this.user_panel.Controls.Add(this.label12);
+            this.user_panel.Controls.Add(this.passangerCounterNum);
+            this.user_panel.Controls.Add(this.tripSearchButton);
+            this.user_panel.Controls.Add(this.label11);
+            this.user_panel.Controls.Add(this.vehicleTypeComboBox);
+            this.user_panel.Controls.Add(this.label10);
+            this.user_panel.Controls.Add(this.dateComboBox);
+            this.user_panel.Controls.Add(this.label8);
+            this.user_panel.Controls.Add(this.endPosComboBox);
+            this.user_panel.Controls.Add(this.label9);
+            this.user_panel.Controls.Add(this.startPosComboBox);
             this.user_panel.Controls.Add(this.label7);
             this.user_panel.Location = new System.Drawing.Point(28, 30);
             this.user_panel.Name = "user_panel";
@@ -284,15 +342,124 @@
             this.user_panel.TabIndex = 7;
             this.user_panel.Visible = false;
             // 
-            // label7
+            // tripSearchButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.Location = new System.Drawing.Point(360, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 37);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "User";
+            this.tripSearchButton.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.tripSearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tripSearchButton.Location = new System.Drawing.Point(610, 274);
+            this.tripSearchButton.Name = "tripSearchButton";
+            this.tripSearchButton.Size = new System.Drawing.Size(101, 34);
+            this.tripSearchButton.TabIndex = 18;
+            this.tripSearchButton.Text = "Sefer Ara";
+            this.tripSearchButton.UseVisualStyleBackColor = false;
+            this.tripSearchButton.Click += new System.EventHandler(this.tripSearchButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label11.Location = new System.Drawing.Point(462, 258);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 20);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Araç Tipi";
+            // 
+            // vehicleTypeComboBox
+            // 
+            this.vehicleTypeComboBox.FormattingEnabled = true;
+            this.vehicleTypeComboBox.Items.AddRange(new object[] {
+            "Uçak",
+            "Otobüs",
+            "Tren",
+            "Herhangi Biri"});
+            this.vehicleTypeComboBox.Location = new System.Drawing.Point(402, 281);
+            this.vehicleTypeComboBox.Name = "vehicleTypeComboBox";
+            this.vehicleTypeComboBox.Size = new System.Drawing.Size(187, 21);
+            this.vehicleTypeComboBox.TabIndex = 16;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(267, 258);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 20);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Tarih";
+            // 
+            // dateComboBox
+            // 
+            this.dateComboBox.FormattingEnabled = true;
+            this.dateComboBox.Items.AddRange(new object[] {
+            "04.12.2023",
+            "05.12.2023",
+            "06.12.2023",
+            "07.12.2023",
+            "08.12.2023",
+            "09.12.2023",
+            "10.12.2023",
+            "Herhangi bir tarih"});
+            this.dateComboBox.Location = new System.Drawing.Point(194, 282);
+            this.dateComboBox.Name = "dateComboBox";
+            this.dateComboBox.Size = new System.Drawing.Size(187, 21);
+            this.dateComboBox.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label8.Location = new System.Drawing.Point(435, 182);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(115, 20);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Varış Noktası";
+            // 
+            // endPosComboBox
+            // 
+            this.endPosComboBox.FormattingEnabled = true;
+            this.endPosComboBox.Items.AddRange(new object[] {
+            "İstanbul",
+            "Kocaeli",
+            "Bilecik",
+            "Ankara",
+            "Eskişehir",
+            "Konya"});
+            this.endPosComboBox.Location = new System.Drawing.Point(402, 205);
+            this.endPosComboBox.Name = "endPosComboBox";
+            this.endPosComboBox.Size = new System.Drawing.Size(187, 21);
+            this.endPosComboBox.TabIndex = 12;
+            // 
+            // passangerCounterNum
+            // 
+            this.passangerCounterNum.Location = new System.Drawing.Point(610, 205);
+            this.passangerCounterNum.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.passangerCounterNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.passangerCounterNum.Name = "passangerCounterNum";
+            this.passangerCounterNum.Size = new System.Drawing.Size(101, 20);
+            this.passangerCounterNum.TabIndex = 19;
+            this.passangerCounterNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(606, 182);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Yolcu Sayısı";
             // 
             // LoginForm
             // 
@@ -300,9 +467,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 587);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.firma_panel);
             this.Controls.Add(this.admin_panel);
-            this.Controls.Add(this.user_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -319,6 +486,7 @@
             this.firma_panel.PerformLayout();
             this.user_panel.ResumeLayout(false);
             this.user_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.passangerCounterNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,11 +512,22 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Panel user_panel;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button admin_ticket;
         private System.Windows.Forms.Button firma_ticket;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Button testButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox startPosComboBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel user_panel;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox vehicleTypeComboBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox dateComboBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox endPosComboBox;
+        private System.Windows.Forms.Button tripSearchButton;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown passangerCounterNum;
     }
 }

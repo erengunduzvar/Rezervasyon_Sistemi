@@ -1,4 +1,5 @@
-﻿using Rezervasyon_Sistemi.Models.Econ;
+﻿using Rezervasyon_Sistemi.Identification;
+using Rezervasyon_Sistemi.Models.Econ;
 using Rezervasyon_Sistemi.Models.Infrastructure;
 using Rezervasyon_Sistemi.Models.Vehicles;
 using System;
@@ -21,34 +22,13 @@ namespace Rezervasyon_Sistemi.Models
 
         public static List<Route> routes = new List<Route>()
         {
-            //1. sefer
-            new Route(1,"is","an",375,new List<string>()
-            {
-                "is","koc","bi","es","an"
-            }),
-
-            new Route(2,"is","kon",450,new List<string>()
-            {
-                "is","koc","bi","es","kon"
-            }),
-            new Route(3,"is","an",500,new List<string>()
-            {
-                "is","koc","an"
-            }),
-
-            new Route(4,"is","kon",600,new List<string>()
-            {
-                "is","koc","es","kon"
-            }),
-            new Route(5,"is","kon",300,new List<string>()
-            {
-                "is","kon"
-            }),
-
-            new Route(6,"is","an",250,new List<string>()
-            {
-                "is","an"
-            })
+ 
+            new Route(1,"is","an",375,new LinkedList<string>(new string[] { "is", "koc", "bi", "es", "an" })),
+            new Route(2,"is","kon",450,new LinkedList<string>(new string[] { "is","koc","bi","es","kon" })),
+            new Route(3,"is","an",500,new LinkedList<string>(new string[] {"is","koc","an"})),
+            new Route(4,"is","kon",600,new LinkedList<string>(new string[] {"is","koc","es","kon"})),
+            new Route(5,"is","kon",300,new LinkedList<string>(new string[] {"is","kon"})),
+            new Route(6,"is","an",250,new LinkedList<string>(new string[] {"is","an"})),
 
         };
         public static List<StaticFuelCosts> fuelCosts = new List<StaticFuelCosts>() {
@@ -69,7 +49,6 @@ namespace Rezervasyon_Sistemi.Models
             new StaticPersonalExpenses(companyName:"C",personalPrice:16000,vehicleType:VehicleType.Airplane),
         };
         
-        public static int lastNameNum = 6;
 
         //expense hesaplama !!
 
@@ -79,22 +58,39 @@ namespace Rezervasyon_Sistemi.Models
 
         public static List<Trip> openTrips = new List<Trip>()
         {
-            new Trip(1,VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("A",3)),
-            new Trip(2,VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("A",3)),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("A",3)),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("A",3)),
 
-            new Trip(3,VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("B",3)),
-            new Trip(4,VehicleType.Bus,4,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("B",4)),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("B",3)),
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("B",4)),
 
-            new Trip(5,VehicleType.Bus,4,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",4)),
-            new Trip(6,VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",5)),
-            new Trip(7,VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",5)),
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",4)),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",5)),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("C",5)),
 
-            new Trip(8,VehicleType.Train,1,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",1)),
-            new Trip(9,VehicleType.Train,2,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",2)),
-            new Trip(10,VehicleType.Train,2,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",2)),
+            new Trip(VehicleType.Train,1,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",1)),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",2)),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("D",2)),
 
-            new Trip(11,VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("F",6)),
-            new Trip(12,VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("F",6))
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("F",6)),
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:4),Expense.calculateTripCost("F",6))
+        };
+
+        public static List<Transport> openTransports = new List<Transport>()
+        {
+            new Transport(Data_Storage.openTrips[0].tripId,20),
+            new Transport(Data_Storage.openTrips[1].tripId,15),
+            new Transport(Data_Storage.openTrips[2].tripId,15),
+            new Transport(Data_Storage.openTrips[3].tripId,20),
+            new Transport(Data_Storage.openTrips[4].tripId,20),
+            new Transport(Data_Storage.openTrips[5].tripId,30),
+            new Transport(Data_Storage.openTrips[6].tripId,30),
+            new Transport(Data_Storage.openTrips[7].tripId,25),
+            new Transport(Data_Storage.openTrips[8].tripId,25),
+            new Transport(Data_Storage.openTrips[9].tripId,25),
+            new Transport(Data_Storage.openTrips[10].tripId,30),
+            new Transport(Data_Storage.openTrips[11].tripId,30),
+
         };
 
         

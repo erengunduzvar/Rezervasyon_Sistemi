@@ -12,9 +12,9 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
         public string startPosition { get; set; }
         public string endPosition { get; set; }
         public int distance { get; set; }
-        public List<String> cities { get; set; }
+        public LinkedList<String> cities { get; set; }
 
-        public Route(int bigRouteId, string startPosition, string endPosition, int distance, List<string> cities)
+        public Route(int bigRouteId, string startPosition, string endPosition, int distance, LinkedList<string> cities)
         {
             BigRouteId = bigRouteId;
             this.startPosition = startPosition;
