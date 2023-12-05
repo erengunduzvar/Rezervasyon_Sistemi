@@ -23,6 +23,7 @@ namespace Rezervasyon_Sistemi.Identification
 
         public Reservation(Passenger passenger, int seatNumber, int transportId)
         {
+            Data_Storage.openReservations.Add(this);
             this.ReservationId = ++ReservationIdCounter;
             this.passenger = passenger;
             this.seatNumber = seatNumber;

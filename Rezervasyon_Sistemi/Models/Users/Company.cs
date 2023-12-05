@@ -10,6 +10,9 @@ namespace Rezervasyon_Sistemi.Models
     public class Company : User, IProfitable
     {
 
+        static int CompanyIdCounter = 0;
+        public int CompanyId { get;}
+
         public double calculateGeneralBalance()
         {
             throw new NotImplementedException();
@@ -34,6 +37,7 @@ namespace Rezervasyon_Sistemi.Models
 
         public Company(string username, string password)
         {
+            this.CompanyId = CompanyIdCounter++;
             this.username = username;
             this.password = password;
         }

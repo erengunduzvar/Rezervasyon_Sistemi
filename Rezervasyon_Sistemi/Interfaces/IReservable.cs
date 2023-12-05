@@ -10,7 +10,7 @@ namespace Rezervasyon_Sistemi.Interfaces
     public interface IReservable
     {
         List<int> AnyTransportValid(string startPos, string endPos, DateTime dateTime);
-        bool reserveSeat(Passenger passenger, DateTime dateTime);
+        bool reserveSeat(Passenger passenger, string startPos, string endPos, int seatNumber);
         bool cancelSeat(Reservation reservation);
     }
 }

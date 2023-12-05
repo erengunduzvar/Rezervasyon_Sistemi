@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rezervasyon_Sistemi.Services
 {
-    public static class Services
+    public static class ServiceClass
     {
         public static string cityShortcutToFullName(string shrtcut)
         {

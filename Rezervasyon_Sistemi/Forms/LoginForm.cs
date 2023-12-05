@@ -103,9 +103,9 @@ namespace Rezervasyon_Sistemi.Forms
         {
             int debugg = 4;
 
-            Data_Storage.openTransports[7].transferPoints.First.Value.reservedChairs[0] = new Reservation(new Passenger("is", "koc", Data_Storage.openTransports[7].transportId, "samet", "kayık"), 0, Data_Storage.openTransports[7].transportId);
-            Data_Storage.openTransports[7].transferPoints.First.Value.reservedChairs[3] = new Reservation(new Passenger("is", "koc", Data_Storage.openTransports[7].transportId, "eren", "gündüzvar"), 3, Data_Storage.openTransports[7].transportId);
-            var x = Data_Storage.openTransports[7].AnyTransportValid("is", "es", new DateTime(2023, 12, 4));
+            //Data_Storage.openTransports[7].transferPoints.First.Value.reservedChairs[0] = new Reservation(new Passenger("is", "koc", Data_Storage.openTransports[7].transportId, "samet", "kayık"), 0, Data_Storage.openTransports[7].transportId);
+            //Data_Storage.openTransports[7].transferPoints.First.Value.reservedChairs[3] = new Reservation(new Passenger("is", "koc", Data_Storage.openTransports[7].transportId, "eren", "gündüzvar"), 3, Data_Storage.openTransports[7].transportId);
+            //var x = Data_Storage.openTransports[7].AnyTransportValid("is", "es", new DateTime(2023, 12, 4));
             int y = 3;
 
         }
@@ -186,7 +186,15 @@ namespace Rezervasyon_Sistemi.Forms
                 }
 
 
-                List<Transport> choosedTransports = Data_Storage.openTransports.Where(t => t.route.cities.Contains(startPos) && t.route.cities.Contains(endPos)&& t.AnyTransportValid(startPos,endPos,date.Value).Count > passangerNum).ToList();
+                var tempTranposrts = Data_Storage.openTransports.Where(t => t.route.cities.Contains(startPos)
+                && t.route.cities.Contains(endPos) && t.trip.date.CompareTo(date.Value) == 0).ToList();
+
+
+                List <Transport> choosedTransports = Data_Storage.openTransports.Where(t => t.route.cities.Contains(startPos) 
+                && t.route.cities.Contains(endPos)&& t.trip.date.CompareTo(date.Value) == 0
+                && t.AnyTransportValid(startPos,endPos,date.Value).Count >= passangerNum)
+                    .ToList();
+
                 switch (vehicleTypeComboBox.SelectedIndex)
                 {
                     case 0:

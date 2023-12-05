@@ -34,17 +34,26 @@ namespace Rezervasyon_Sistemi.Forms
         {
             foreach (var transp in TransportList)
             { //Kalan koltuk sayısının dinamizmini hesaplamak
-                availableTripDataGrid.Rows.Add(transp.transportId.ToString(), transp.trip.date.ToShortDateString(),transp.AnyTransportValid(startPos,endPos,date).Count, $"{Services.Services.cityShortcutToFullName(transp.route.startPosition)} - {Services.Services.cityShortcutToFullName(transp.route.endPosition)}",transp.trip.VehicleType.ToString(), "Satın Al");
+                availableTripDataGrid.Rows.Add(transp.trip.Company.username,transp.transportId.ToString(), transp.trip.date.ToShortDateString(),transp.AnyTransportValid(startPos,endPos,date).Count, $"{Services.ServiceClass.cityShortcutToFullName(transp.route.startPosition)} - {Services.ServiceClass.cityShortcutToFullName(transp.route.endPosition)}",transp.trip.VehicleType.ToString(), "Satın Al");
             }
-            availableTripDataGrid.Columns[5].DefaultCellStyle.BackColor = Color.Green;
+            availableTripDataGrid.Columns[6].DefaultCellStyle.BackColor = Color.Green;
         }
 
         private void availableTripDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == 5 && e.RowIndex >= 0)
+            if(e.ColumnIndex == 6 && e.RowIndex >= 0)
             {
-                int tripId = int.Parse(availableTripDataGrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+                int _tripId = int.Parse(availableTripDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString());
+                Transport transport = TransportList.FirstOrDefault(t => t.tripId == _tripId);
+                new ReserveForm(transport,startPos,endPos,date,passengerCount).Show();
+                this.Close();
+
             }
+        }
+
+        private void availableTripDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

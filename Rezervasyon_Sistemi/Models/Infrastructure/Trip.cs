@@ -8,6 +8,8 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
 {
     public class Trip
     {
+        public Company Company { get => Data_Storage.companies.First(c => c.CompanyId == this.CompanyId); }
+        public int CompanyId { get; set; }
         //Counter ekleme eklenecek
         static int tripIdCounter = 0;
         //static
@@ -28,9 +30,11 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
         //fiyat
         public double Price { get; set; } = -1;
 
+        public int MyProperty { get; set; }
+
         //Gidiş Yolu mu Dönüş yolu mu
 
-        public Trip( VehicleType vehicleType, int bigRouteId, DateTime date, double price)
+        public Trip( VehicleType vehicleType, int bigRouteId, DateTime date, double price, int CompanyId)
         {
             tripIdCounter++;
             this.tripId = tripIdCounter;
@@ -38,6 +42,7 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
             BigRouteId = bigRouteId;
             this.date = date;
             Price = price;
+            this.CompanyId = CompanyId;
         }
     }
 }

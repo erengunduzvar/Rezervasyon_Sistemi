@@ -67,7 +67,7 @@ namespace Rezervasyon_Sistemi.Identification
             var travablePoints = transferPoints.First;
             LinkedListNode<TransferPoints> firstTransferPoint = null, lastTransferPoint = null;
             int count = 0;
-            while (travablePoints.Next != null)
+            while (travablePoints != null)
             {
                 if (travablePoints.Value.startPos == startPos)
                 {
@@ -104,7 +104,7 @@ namespace Rezervasyon_Sistemi.Identification
         //Eğer aralıkta müsait bir koltuk varsa döndürür
         public List<int> AnyTransportValid(string startPos, string endPos, DateTime dateTime)
         {
-
+            //bug1
             var results = this.findFirstAndLastNode(startPos, endPos);
             if(results == null)
                 return null;
@@ -114,19 +114,23 @@ namespace Rezervasyon_Sistemi.Identification
 
             List<Reservation> usableSeats = new List<Reservation>(new Reservation[seatCount]);
 
-
-            while (firstTransferPoint.Previous != lastTransferPoint && firstTransferPoint.Next != null)
+            ///AAAA
+            ///
+            do
             {
-                for (int i = 0; i < firstTransferPoint.Value.reservedChairs.Count; i++)
                 {
-                    if (firstTransferPoint.Value.reservedChairs[i] != null && firstTransferPoint.Value.reservedChairs[i].transport.trip.date.CompareTo(dateTime) == 0)
+                    for (int i = 0; i < firstTransferPoint.Value.reservedChairs.Count; i++)
                     {
-                        usableSeats[i] = firstTransferPoint.Value.reservedChairs[i];
+                        if (firstTransferPoint.Value.reservedChairs[i] != null && firstTransferPoint.Value.reservedChairs[i].transport.trip.date.CompareTo(dateTime) == 0)
+                        {
+                            usableSeats[i] = firstTransferPoint.Value.reservedChairs[i];
+                        }
                     }
+                    if(firstTransferPoint.Next != null)
+                    firstTransferPoint = firstTransferPoint.Next;
                 }
+            } while (firstTransferPoint.Previous != lastTransferPoint && firstTransferPoint.Next != null);
 
-                firstTransferPoint = firstTransferPoint.Next;
-            }
 
             List<int> usableSeatsIndexes = new List<int>();
 
@@ -139,9 +143,33 @@ namespace Rezervasyon_Sistemi.Identification
 
 
 
-        public bool reserveSeat(Passenger passenger,DateTime dateTime)
+        public bool reserveSeat(Passenger passenger,string startPos,string endPos,int seatNumber)
         {
-            throw new NotImplementedException();
+            var results = this.findFirstAndLastNode(startPos, endPos);
+            if (results == null)
+                return false;
+
+            var firstTransferPoint = results[0];
+            var lastTransferPoint = results[1];
+
+
+            while (firstTransferPoint.Previous != lastTransferPoint && firstTransferPoint.Next != null)
+            {
+                if (firstTransferPoint.Value.endPos == "koc")
+                {
+                    int xxa = 54;
+                }
+
+
+                firstTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
+                if (firstTransferPoint.Next != null)
+                {
+                    firstTransferPoint.Next.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
+                }
+                firstTransferPoint = firstTransferPoint.Next;
+            }
+
+            return true;
         }
 
         public bool cancelSeat(Reservation reservation) //add reservation

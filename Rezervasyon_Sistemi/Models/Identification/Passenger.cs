@@ -15,12 +15,14 @@ namespace Rezervasyon_Sistemi.Identification
         string startPos { get; set; }
         string endPos { get; set; }
         int transportId { get; set; }
+        public string tcKimlikNo { get; set; }
+        public DateTime dogumTarihi { get; set; }
         public Transport transport
         {
             get => Data_Storage.openTransports.FirstOrDefault(t => t.transportId == transportId);
         }
 
-        public Passenger(string startPos, string endPos, int transportId, string ad,string soyad)
+        public Passenger(string startPos, string endPos, int transportId, string ad,string soyad,string tcKimlikNo,DateTime dogum)
         {
             PassengerIdCounter++;
             PassengerId = PassengerIdCounter;
@@ -29,6 +31,8 @@ namespace Rezervasyon_Sistemi.Identification
             this.transportId = transportId;
             this.Ad = ad;
             this.Soyad = soyad;
+            this.tcKimlikNo = tcKimlikNo;
+            this.dogumTarihi = dogum;
         }
     }
 }

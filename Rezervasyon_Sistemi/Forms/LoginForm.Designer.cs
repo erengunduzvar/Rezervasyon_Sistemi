@@ -54,6 +54,8 @@
             this.startPosComboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.user_panel = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.passangerCounterNum = new System.Windows.Forms.NumericUpDown();
             this.tripSearchButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.vehicleTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -61,8 +63,6 @@
             this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.endPosComboBox = new System.Windows.Forms.ComboBox();
-            this.passangerCounterNum = new System.Windows.Forms.NumericUpDown();
-            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.admin_panel.SuspendLayout();
             this.firma_panel.SuspendLayout();
@@ -342,6 +342,38 @@
             this.user_panel.TabIndex = 7;
             this.user_panel.Visible = false;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label12.Location = new System.Drawing.Point(606, 182);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 20);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Yolcu Sayısı";
+            // 
+            // passangerCounterNum
+            // 
+            this.passangerCounterNum.Location = new System.Drawing.Point(610, 205);
+            this.passangerCounterNum.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.passangerCounterNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.passangerCounterNum.Name = "passangerCounterNum";
+            this.passangerCounterNum.Size = new System.Drawing.Size(101, 20);
+            this.passangerCounterNum.TabIndex = 19;
+            this.passangerCounterNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // tripSearchButton
             // 
             this.tripSearchButton.BackColor = System.Drawing.Color.AntiqueWhite;
@@ -397,8 +429,7 @@
             "07.12.2023",
             "08.12.2023",
             "09.12.2023",
-            "10.12.2023",
-            "Herhangi bir tarih"});
+            "10.12.2023"});
             this.dateComboBox.Location = new System.Drawing.Point(194, 282);
             this.dateComboBox.Name = "dateComboBox";
             this.dateComboBox.Size = new System.Drawing.Size(187, 21);
@@ -428,38 +459,6 @@
             this.endPosComboBox.Name = "endPosComboBox";
             this.endPosComboBox.Size = new System.Drawing.Size(187, 21);
             this.endPosComboBox.TabIndex = 12;
-            // 
-            // passangerCounterNum
-            // 
-            this.passangerCounterNum.Location = new System.Drawing.Point(610, 205);
-            this.passangerCounterNum.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.passangerCounterNum.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.passangerCounterNum.Name = "passangerCounterNum";
-            this.passangerCounterNum.Size = new System.Drawing.Size(101, 20);
-            this.passangerCounterNum.TabIndex = 19;
-            this.passangerCounterNum.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label12.Location = new System.Drawing.Point(606, 182);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 20);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Yolcu Sayısı";
             // 
             // LoginForm
             // 

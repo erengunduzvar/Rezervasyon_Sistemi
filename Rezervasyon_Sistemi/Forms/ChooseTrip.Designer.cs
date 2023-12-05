@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.availableTripDataGrid = new System.Windows.Forms.DataGridView();
+            this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TripId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TripDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AvailableSeats = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,18 +49,26 @@
             this.availableTripDataGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.availableTripDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.availableTripDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.companyName,
             this.TripId,
             this.TripDate,
             this.AvailableSeats,
             this.tripRoute,
             this.VehicleType,
             this.buySeat});
-            this.availableTripDataGrid.Location = new System.Drawing.Point(151, 36);
+            this.availableTripDataGrid.Location = new System.Drawing.Point(103, 38);
             this.availableTripDataGrid.Name = "availableTripDataGrid";
             this.availableTripDataGrid.ReadOnly = true;
-            this.availableTripDataGrid.Size = new System.Drawing.Size(644, 487);
+            this.availableTripDataGrid.Size = new System.Drawing.Size(741, 487);
             this.availableTripDataGrid.TabIndex = 0;
             this.availableTripDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.availableTripDataGrid_CellClick);
+            this.availableTripDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.availableTripDataGrid_CellContentClick);
+            // 
+            // companyName
+            // 
+            this.companyName.HeaderText = "Firma İsmi";
+            this.companyName.Name = "companyName";
+            this.companyName.ReadOnly = true;
             // 
             // TripId
             // 
@@ -118,6 +127,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView availableTripDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TripId;
         private System.Windows.Forms.DataGridViewTextBoxColumn TripDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn AvailableSeats;
