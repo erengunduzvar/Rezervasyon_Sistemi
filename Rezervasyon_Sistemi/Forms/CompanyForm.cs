@@ -56,6 +56,9 @@ namespace Rezervasyon_Sistemi.Forms
                     int tripId = int.Parse(addTransTripCombo.SelectedItem.ToString().Split(':')[0]);
                     int seatCount = (int)addTransSeatUpDown.Value;
                     Data_Storage.openTransports.Add(new Transport(tripId, seatCount));
+
+                    Trip tempTrip = Data_Storage.openTrips.Where(tr => tr.tripId == tripId).First();
+                    tempTrip.Price += Expense.calculateTripCost(tempTrip.Company.username,tempTrip.BigRouteId);
                 }
                 catch (Exception)
                 {
