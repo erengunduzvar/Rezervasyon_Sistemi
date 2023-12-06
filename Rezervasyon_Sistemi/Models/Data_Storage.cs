@@ -69,7 +69,7 @@ namespace Rezervasyon_Sistemi.Models
 
             new StaticPersonalExpenses(companyName:"F",personalPrice:11500,vehicleType:VehicleType.Airplane),
             new StaticPersonalExpenses(companyName:"C",personalPrice:16000,vehicleType:VehicleType.Airplane),
-            new StaticPersonalExpenses(companyName:"A",personalPrice:1300,vehicleType:VehicleType.Airplane),
+            new StaticPersonalExpenses(companyName:"A",personalPrice:13000,vehicleType:VehicleType.Airplane),
             new StaticPersonalExpenses(companyName:"B",personalPrice:13000,vehicleType:VehicleType.Airplane),
             new StaticPersonalExpenses(companyName:"D",personalPrice:14000,vehicleType:VehicleType.Airplane),
         };

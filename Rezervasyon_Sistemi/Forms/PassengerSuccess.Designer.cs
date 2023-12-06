@@ -51,6 +51,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PassengerSuccess";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biletleme Başarılı";
             this.Load += new System.EventHandler(this.PassengerSuccess_Load);
             this.ResumeLayout(false);

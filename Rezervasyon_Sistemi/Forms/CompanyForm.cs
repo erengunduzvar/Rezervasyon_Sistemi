@@ -228,7 +228,7 @@ namespace Rezervasyon_Sistemi.Forms
                 }
                     
 
-                dailyRevTextBox.Text = $"Kar: {revenue.ToString("C")}\nZarar: {expense.ToString("C")}\nTotal Girdi: {totalString}";
+                dailyRevTextBox.Text = $"Kar: {revenue.ToString("C")}\nZarar: {expense.ToString("C")}\nAdmin Bedeli: -{Admin.AdminFee.ToString("C")}\nTotal Girdi: {totalString}";
 
 
             }
@@ -263,7 +263,7 @@ namespace Rezervasyon_Sistemi.Forms
             }
 
 
-            allRevTextBox.Text = $"Kar: {revenue.ToString("C")}\nZarar: {expense.ToString("C")}\nTotal Girdi: {totalString}";
+            allRevTextBox.Text = $"Kar: {revenue.ToString("C")}\nZarar: {expense.ToString("C")}\nAdmin Bedeli: -{(Admin.AdminFee*7).ToString("C")}\nTotal Girdi: {totalString}";
 
 
         }

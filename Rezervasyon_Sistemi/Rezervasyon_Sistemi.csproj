@@ -89,6 +89,7 @@
       <DependentUpon>ReserveForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Econ\StaticRevenue.cs" />
+    <Compile Include="Models\Identification\Customer.cs" />
     <Compile Include="Models\Identification\Passenger.cs" />
     <Compile Include="Models\Identification\Person.cs" />
     <Compile Include="Models\Identification\Personel.cs" />

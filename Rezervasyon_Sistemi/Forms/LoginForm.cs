@@ -90,7 +90,7 @@ namespace Rezervasyon_Sistemi.Forms
         {
             foreach (var company in Data_Storage.companies)
             {
-                if (company.Login(textBox4.Text, textBox3.Text))
+                if (company.Login(textBox4.Text.ToUpper(), textBox3.Text))
                 {
                     new CompanyForm(company).ShowDialog();
                     break;

@@ -112,7 +112,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReserveForm";
-            this.Text = "TestForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Koltuk Seçimi";
             this.Load += new System.EventHandler(this.ReserveForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -56,10 +56,11 @@
             this.tripRoute,
             this.VehicleType,
             this.buySeat});
-            this.availableTripDataGrid.Location = new System.Drawing.Point(103, 38);
+            this.availableTripDataGrid.Location = new System.Drawing.Point(115, 38);
             this.availableTripDataGrid.Name = "availableTripDataGrid";
             this.availableTripDataGrid.ReadOnly = true;
-            this.availableTripDataGrid.Size = new System.Drawing.Size(741, 487);
+            this.availableTripDataGrid.RowHeadersVisible = false;
+            this.availableTripDataGrid.Size = new System.Drawing.Size(702, 487);
             this.availableTripDataGrid.TabIndex = 0;
             this.availableTripDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.availableTripDataGrid_CellClick);
             this.availableTripDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.availableTripDataGrid_CellContentClick);
