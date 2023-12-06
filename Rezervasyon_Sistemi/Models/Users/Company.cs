@@ -18,7 +18,7 @@ namespace Rezervasyon_Sistemi.Models
             throw new NotImplementedException();
         }
 
-        public double dailyProfit()
+        public double dailyProfit(DateTime date)
         {
             throw new NotImplementedException();
         }

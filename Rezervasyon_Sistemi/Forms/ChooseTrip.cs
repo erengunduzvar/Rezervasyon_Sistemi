@@ -1,4 +1,5 @@
 ﻿using Rezervasyon_Sistemi.Identification;
+using Rezervasyon_Sistemi.Models.Econ;
 using Rezervasyon_Sistemi.Models.Infrastructure;
 using Rezervasyon_Sistemi.Services;
 using System;
@@ -34,7 +35,7 @@ namespace Rezervasyon_Sistemi.Forms
         {
             foreach (var transp in TransportList)
             { //Kalan koltuk sayısının dinamizmini hesaplamak
-                availableTripDataGrid.Rows.Add(transp.trip.Company.username,transp.transportId.ToString(), transp.trip.date.ToShortDateString(),transp.AnyTransportValid(startPos,endPos,date).Count, $"{Services.ServiceClass.cityShortcutToFullName(transp.route.startPosition)} - {Services.ServiceClass.cityShortcutToFullName(transp.route.endPosition)}",transp.trip.VehicleType.ToString(), "Satın Al");
+                availableTripDataGrid.Rows.Add(transp.trip.Company.username,transp.transportId.ToString(), transp.trip.date.ToShortDateString(),transp.AnyTransportValid(startPos,endPos,date).Count, $"{Services.ServiceClass.cityShortcutToFullName(transp.route.startPosition)} - {Services.ServiceClass.cityShortcutToFullName(transp.route.endPosition)}",transp.trip.VehicleType.ToString(), (StaticRevenue.calculateExpectedRevenue(startPos,endPos,transp.trip.VehicleType) * passengerCount).ToString("C") );
             }
             availableTripDataGrid.Columns[6].DefaultCellStyle.BackColor = Color.Green;
         }

@@ -8,7 +8,7 @@ namespace Rezervasyon_Sistemi.Interfaces
 {
     internal interface IProfitable
     {
-        double dailyProfit();
+        double dailyProfit(DateTime date);
         double calculateGeneralBalance();
     }
 }

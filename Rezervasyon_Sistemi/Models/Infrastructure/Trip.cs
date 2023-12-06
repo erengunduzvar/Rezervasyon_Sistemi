@@ -30,7 +30,7 @@ namespace Rezervasyon_Sistemi.Models.Infrastructure
         //fiyat
         public double Price { get; set; } = -1;
 
-        public int MyProperty { get; set; }
+        public double Revenue { get; set; } = 0;
 
         //Gidiş Yolu mu Dönüş yolu mu
 

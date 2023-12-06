@@ -1,5 +1,6 @@
 ﻿using Rezervasyon_Sistemi.Interfaces;
 using Rezervasyon_Sistemi.Models;
+using Rezervasyon_Sistemi.Models.Econ;
 using Rezervasyon_Sistemi.Models.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -160,12 +161,23 @@ namespace Rezervasyon_Sistemi.Identification
             {
                 tempTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
                 tempTransferPoint = tempTransferPoint.Next;
+                
             }
 
             if (tempTransferPoint == lastTransferPoint)
+            {
                 tempTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
+            }
+            //Getiri ekle
+            this.addRevenue(startPos, endPos, this.trip.VehicleType);
 
             return true;
+        }
+
+        void addRevenue (string startPos,string endPos,VehicleType vehicleType)
+        {
+            double ticketCost = StaticRevenue.calculateExpectedRevenue(startPos,endPos,vehicleType);
+            trip.Revenue += ticketCost;
         }
 
         public bool cancelSeat(Reservation reservation) //add reservation
