@@ -44,8 +44,8 @@ namespace Rezervasyon_Sistemi.Forms
         {
             if(e.ColumnIndex == 6 && e.RowIndex >= 0)
             {
-                int _tripId = int.Parse(availableTripDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString());
-                Transport transport = TransportList.FirstOrDefault(t => t.tripId == _tripId);
+                int transportId = int.Parse(availableTripDataGrid.Rows[e.RowIndex].Cells[1].Value.ToString());
+                Transport transport = TransportList.FirstOrDefault(t => t.transportId == transportId);
                 new ReserveForm(transport,startPos,endPos,date,passengerCount).Show();
                 this.Close();
 

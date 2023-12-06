@@ -90,11 +90,14 @@ namespace Rezervasyon_Sistemi.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var company = new Company(textBox4.Text, textBox3.Text);
-
-            if (company.Login(company.username, company.password))
+            foreach (var company in Data_Storage.companies)
             {
-                new CompanyForm().ShowDialog();
+                if (company.Login(textBox4.Text, textBox3.Text))
+                {
+                    new CompanyForm(company.CompanyId).ShowDialog();
+                    break;
+                }
+                    
             }
 
         }

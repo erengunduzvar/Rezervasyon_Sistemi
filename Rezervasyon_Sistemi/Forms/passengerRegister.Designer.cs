@@ -143,7 +143,7 @@
             this.tcNoText.Location = new System.Drawing.Point(178, 140);
             this.tcNoText.Name = "tcNoText";
             this.tcNoText.Size = new System.Drawing.Size(153, 20);
-            this.tcNoText.TabIndex = 13;
+            this.tcNoText.TabIndex = 9;
             // 
             // PassengerRegister
             // 
