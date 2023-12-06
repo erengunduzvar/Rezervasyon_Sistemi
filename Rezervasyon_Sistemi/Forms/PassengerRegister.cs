@@ -1,4 +1,5 @@
 ﻿using Rezervasyon_Sistemi.Identification;
+using Rezervasyon_Sistemi.Models.Identification;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,10 @@ namespace Rezervasyon_Sistemi.Forms
         {
             if (nameText.Text.Length != 0 && surnameText.Text.Length != 0 && tcNoText.Text.Length == 11)
             {
-                transport.reserveSeat(new Passenger(this.startPos, this.endPos, this.transport.transportId, nameText.Text, surnameText.Text, tcNoText.Text, dateText.Value), this.startPos, this.endPos, seatNum);
+                List<Customer> customers = new List<Customer>();
+                customers.Add(new Customer(nameText.Text, surnameText.Text, tcNoText.Text, dateText.Value));
+                customers.First().buyTicket(transport,this.startPos,this.endPos,seatNum);
+
                 choosedButtons.Remove(seatNum);
                 if (choosedButtons.Count != 0)
                 {
