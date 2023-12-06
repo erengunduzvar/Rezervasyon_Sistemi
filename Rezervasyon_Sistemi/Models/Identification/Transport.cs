@@ -152,22 +152,18 @@ namespace Rezervasyon_Sistemi.Identification
             var firstTransferPoint = results[0];
             var lastTransferPoint = results[1];
 
+            var tempTransferPoint = firstTransferPoint;
 
-            while (firstTransferPoint.Previous != lastTransferPoint && firstTransferPoint.Next != null)
+            
+
+            while (tempTransferPoint != lastTransferPoint)
             {
-                if (firstTransferPoint.Value.endPos == "koc")
-                {
-                    int xxa = 54;
-                }
-
-
-                firstTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
-                if (firstTransferPoint.Next != null)
-                {
-                    firstTransferPoint.Next.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
-                }
-                firstTransferPoint = firstTransferPoint.Next;
+                tempTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
+                tempTransferPoint = tempTransferPoint.Next;
             }
+
+            if (tempTransferPoint == lastTransferPoint)
+                tempTransferPoint.Value.reservedChairs[seatNumber] = new Reservation(passenger, seatNumber, transportId);
 
             return true;
         }
