@@ -41,10 +41,10 @@
             this.addTripRouteCombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dailyRevTextBox = new System.Windows.Forms.RichTextBox();
             this.dailyRevDateCombo = new System.Windows.Forms.ComboBox();
             this.dailyRevButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dailyRevTextBox = new System.Windows.Forms.RichTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.allRevTextBox = new System.Windows.Forms.RichTextBox();
             this.allRevButton = new System.Windows.Forms.Button();
@@ -193,6 +193,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Araç Ekle";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // addTripRouteCombo
             // 
@@ -226,6 +227,16 @@
             this.panel3.Size = new System.Drawing.Size(240, 186);
             this.panel3.TabIndex = 9;
             // 
+            // dailyRevTextBox
+            // 
+            this.dailyRevTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dailyRevTextBox.Location = new System.Drawing.Point(3, 107);
+            this.dailyRevTextBox.Name = "dailyRevTextBox";
+            this.dailyRevTextBox.ReadOnly = true;
+            this.dailyRevTextBox.Size = new System.Drawing.Size(234, 76);
+            this.dailyRevTextBox.TabIndex = 9;
+            this.dailyRevTextBox.Text = "";
+            // 
             // dailyRevDateCombo
             // 
             this.dailyRevDateCombo.FormattingEnabled = true;
@@ -254,6 +265,7 @@
             this.dailyRevButton.TabIndex = 8;
             this.dailyRevButton.Text = "Hesapla";
             this.dailyRevButton.UseVisualStyleBackColor = false;
+            this.dailyRevButton.Click += new System.EventHandler(this.dailyRevButton_Click);
             // 
             // label2
             // 
@@ -264,16 +276,6 @@
             this.label2.Size = new System.Drawing.Size(209, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Günlük Kar Hesabı";
-            // 
-            // dailyRevTextBox
-            // 
-            this.dailyRevTextBox.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dailyRevTextBox.Location = new System.Drawing.Point(3, 107);
-            this.dailyRevTextBox.Name = "dailyRevTextBox";
-            this.dailyRevTextBox.ReadOnly = true;
-            this.dailyRevTextBox.Size = new System.Drawing.Size(234, 76);
-            this.dailyRevTextBox.TabIndex = 9;
-            this.dailyRevTextBox.Text = "";
             // 
             // panel4
             // 
@@ -306,6 +308,7 @@
             this.allRevButton.TabIndex = 8;
             this.allRevButton.Text = "Hesapla";
             this.allRevButton.UseVisualStyleBackColor = false;
+            this.allRevButton.Click += new System.EventHandler(this.allRevButton_Click);
             // 
             // label5
             // 
@@ -338,6 +341,7 @@
             this.deleteTransButton.TabIndex = 5;
             this.deleteTransButton.Text = "Araç Sil";
             this.deleteTransButton.UseVisualStyleBackColor = false;
+            this.deleteTransButton.Click += new System.EventHandler(this.deleteTransButton_Click);
             // 
             // deleteTransCombo
             // 
@@ -380,6 +384,7 @@
             this.deleteTripButton.TabIndex = 5;
             this.deleteTripButton.Text = "Sefer Sil";
             this.deleteTripButton.UseVisualStyleBackColor = false;
+            this.deleteTripButton.Click += new System.EventHandler(this.deleteTripButton_Click);
             // 
             // deleteTripCombo
             // 

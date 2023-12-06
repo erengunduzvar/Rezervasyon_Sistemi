@@ -38,7 +38,18 @@ namespace Rezervasyon_Sistemi.Models
             new StaticFuelCosts(VehicleType.Bus,10,"A"),
             new StaticFuelCosts(VehicleType.Bus,5,"B"),
             new StaticFuelCosts(VehicleType.Bus,6,"C"),
-            new StaticFuelCosts(VehicleType.Train,3,"D"),
+            new StaticFuelCosts(VehicleType.Bus,11,"D"),
+            new StaticFuelCosts(VehicleType.Bus,15,"F"),
+
+            new StaticFuelCosts(VehicleType.Train,3,"A"),
+            new StaticFuelCosts(VehicleType.Train,7,"B"),
+            new StaticFuelCosts(VehicleType.Train,8,"C"),
+            new StaticFuelCosts(VehicleType.Train,7,"D"),
+            new StaticFuelCosts(VehicleType.Train,13,"F"),
+
+            new StaticFuelCosts(VehicleType.Airplane,32,"A"),
+            new StaticFuelCosts(VehicleType.Airplane,30,"B"),
+            new StaticFuelCosts(VehicleType.Airplane,28,"D"),
             new StaticFuelCosts(VehicleType.Airplane,20,"F"),
             new StaticFuelCosts(VehicleType.Airplane,25,"C")
         };
@@ -47,9 +58,20 @@ namespace Rezervasyon_Sistemi.Models
             new StaticPersonalExpenses(companyName:"A",personalPrice:7000,vehicleType:VehicleType.Bus),
             new StaticPersonalExpenses(companyName:"B",personalPrice:4500,vehicleType:VehicleType.Bus),
             new StaticPersonalExpenses(companyName:"C",personalPrice:6000,vehicleType:VehicleType.Bus),
+            new StaticPersonalExpenses(companyName:"D",personalPrice:7800,vehicleType:VehicleType.Bus),
+            new StaticPersonalExpenses(companyName:"F",personalPrice:8200,vehicleType:VehicleType.Bus),
+
             new StaticPersonalExpenses(companyName:"D",personalPrice:3000,vehicleType:VehicleType.Train),
+            new StaticPersonalExpenses(companyName:"A",personalPrice:3400,vehicleType:VehicleType.Train),
+            new StaticPersonalExpenses(companyName:"B",personalPrice:3700,vehicleType:VehicleType.Train),
+            new StaticPersonalExpenses(companyName:"C",personalPrice:3500,vehicleType:VehicleType.Train),
+            new StaticPersonalExpenses(companyName:"F",personalPrice:3300,vehicleType:VehicleType.Train),
+
             new StaticPersonalExpenses(companyName:"F",personalPrice:11500,vehicleType:VehicleType.Airplane),
             new StaticPersonalExpenses(companyName:"C",personalPrice:16000,vehicleType:VehicleType.Airplane),
+            new StaticPersonalExpenses(companyName:"A",personalPrice:1300,vehicleType:VehicleType.Airplane),
+            new StaticPersonalExpenses(companyName:"B",personalPrice:13000,vehicleType:VehicleType.Airplane),
+            new StaticPersonalExpenses(companyName:"D",personalPrice:14000,vehicleType:VehicleType.Airplane),
         };
         
 

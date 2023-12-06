@@ -8,7 +8,7 @@ namespace Rezervasyon_Sistemi.Models
 {
     public class Admin : User
     {
-
+        public static int AdminFee { get; set; }
         public Admin(string _username,string _password)
         {
             username = _username;
@@ -17,11 +17,11 @@ namespace Rezervasyon_Sistemi.Models
 
         public override bool Login(string _username, string _password)
         {
-            if (_username == Data_Storage.admin.username && _password == Data_Storage.admin.password)
+            if(_username == this.username && _password == this.password)
             {
                 return true;
             }
-            else return false;
+            return false;
         }
     }
 }

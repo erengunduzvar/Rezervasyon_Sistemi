@@ -25,12 +25,9 @@ namespace Rezervasyon_Sistemi.Models
 
         public override bool Login(string username, string password)
         {
-            foreach (var _company in Data_Storage.companies)
+            if (username == this.username && password == this.password)
             {
-                if(_company.username == username && _company.password == password)
-                {
-                    return true;
-                }
+                return true;
             }
             return false;
         }

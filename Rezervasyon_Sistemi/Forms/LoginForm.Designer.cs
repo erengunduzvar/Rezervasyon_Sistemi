@@ -42,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.admin_username_text = new System.Windows.Forms.TextBox();
             this.firma_panel = new System.Windows.Forms.Panel();
-            this.testButton = new System.Windows.Forms.Button();
             this.firma_ticket = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -177,6 +176,7 @@
             // 
             this.admin_password_text.Location = new System.Drawing.Point(282, 245);
             this.admin_password_text.Name = "admin_password_text";
+            this.admin_password_text.PasswordChar = '*';
             this.admin_password_text.Size = new System.Drawing.Size(261, 20);
             this.admin_password_text.TabIndex = 2;
             // 
@@ -198,7 +198,6 @@
             // 
             // firma_panel
             // 
-            this.firma_panel.Controls.Add(this.testButton);
             this.firma_panel.Controls.Add(this.firma_ticket);
             this.firma_panel.Controls.Add(this.label4);
             this.firma_panel.Controls.Add(this.button2);
@@ -211,16 +210,6 @@
             this.firma_panel.Size = new System.Drawing.Size(842, 513);
             this.firma_panel.TabIndex = 6;
             this.firma_panel.Visible = false;
-            // 
-            // testButton
-            // 
-            this.testButton.Location = new System.Drawing.Point(703, 14);
-            this.testButton.Name = "testButton";
-            this.testButton.Size = new System.Drawing.Size(75, 23);
-            this.testButton.TabIndex = 8;
-            this.testButton.Text = "Test";
-            this.testButton.UseVisualStyleBackColor = true;
-            this.testButton.Click += new System.EventHandler(this.testButton_Click);
             // 
             // firma_ticket
             // 
@@ -268,6 +257,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(282, 245);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(261, 20);
             this.textBox3.TabIndex = 2;
             // 
@@ -466,9 +456,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 587);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.firma_panel);
             this.Controls.Add(this.admin_panel);
+            this.Controls.Add(this.user_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
@@ -514,7 +504,6 @@
         private System.Windows.Forms.Button admin_ticket;
         private System.Windows.Forms.Button firma_ticket;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button testButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox startPosComboBox;
         private System.Windows.Forms.Label label9;

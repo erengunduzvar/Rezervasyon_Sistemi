@@ -80,11 +80,9 @@ namespace Rezervasyon_Sistemi.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Admin admin = new Admin(admin_username_text.Text, admin_password_text.Text);
-            if (admin.Login(admin.username, admin.password))
+            if (Data_Storage.admin.Login(admin_username_text.Text, admin_password_text.Text))
             {
                 new AdminForm().ShowDialog();
-
             }
         }
 
@@ -94,7 +92,7 @@ namespace Rezervasyon_Sistemi.Forms
             {
                 if (company.Login(textBox4.Text, textBox3.Text))
                 {
-                    new CompanyForm(company.CompanyId).ShowDialog();
+                    new CompanyForm(company).ShowDialog();
                     break;
                 }
                     
