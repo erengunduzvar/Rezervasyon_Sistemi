@@ -134,6 +134,7 @@ namespace Rezervasyon_Sistemi.Models
             new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:6),Expense.calculateTripCost("F",6), 4),
             new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:6),Expense.calculateTripCost("F",6), 4),
 
+            //__//
             new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:7),Expense.calculateTripCost("A",3), 0),
             new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:7),Expense.calculateTripCost("A",3), 0),
 
@@ -150,6 +151,60 @@ namespace Rezervasyon_Sistemi.Models
 
             new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:7),Expense.calculateTripCost("F",6), 4),
             new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:7),Expense.calculateTripCost("F",6), 4),
+
+            //__//
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("A",3), 0),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("A",3), 0),
+
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("B",3), 1),
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("B",4), 1),
+
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("C",4), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("C",5), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("C",5), 2),
+
+            new Trip(VehicleType.Train,1,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("D",1), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("D",2), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("D",2), 3),
+
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("F",6), 4),
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:8),Expense.calculateTripCost("F",6), 4),
+
+            //__//
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("A",3), 0),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("A",3), 0),
+
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("B",3), 1),
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("B",4), 1),
+
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("C",4), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("C",5), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("C",5), 2),
+
+            new Trip(VehicleType.Train,1,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("D",1), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("D",2), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("D",2), 3),
+
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("F",6), 4),
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:9),Expense.calculateTripCost("F",6), 4),
+
+            //__//
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("A",3), 0),
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("A",3), 0),
+
+            new Trip(VehicleType.Bus,3,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("B",3), 1),
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("B",4), 1),
+
+            new Trip(VehicleType.Bus,4,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("C",4), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("C",5), 2),
+            new Trip(VehicleType.Airplane,5,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("C",5), 2),
+
+            new Trip(VehicleType.Train,1,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("D",1), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("D",2), 3),
+            new Trip(VehicleType.Train,2,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("D",2), 3),
+
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("F",6), 4),
+            new Trip(VehicleType.Airplane,6,new DateTime(year:2023,month:12,day:10),Expense.calculateTripCost("F",6), 4),
 
 
 
@@ -212,6 +267,46 @@ namespace Rezervasyon_Sistemi.Models
             new Transport(Data_Storage.openTrips[45].tripId,25),
             new Transport(Data_Storage.openTrips[46].tripId,30),
             new Transport(Data_Storage.openTrips[47].tripId,30),
+
+            //---
+            new Transport(Data_Storage.openTrips[48].tripId,20),
+            new Transport(Data_Storage.openTrips[49].tripId,15),
+            new Transport(Data_Storage.openTrips[50].tripId,15),
+            new Transport(Data_Storage.openTrips[51].tripId,20),
+            new Transport(Data_Storage.openTrips[52].tripId,20),
+            new Transport(Data_Storage.openTrips[53].tripId,30),
+            new Transport(Data_Storage.openTrips[54].tripId,30),
+            new Transport(Data_Storage.openTrips[55].tripId,25),
+            new Transport(Data_Storage.openTrips[56].tripId,25),
+            new Transport(Data_Storage.openTrips[57].tripId,25),
+            new Transport(Data_Storage.openTrips[58].tripId,30),
+            new Transport(Data_Storage.openTrips[59].tripId,30),
+
+            new Transport(Data_Storage.openTrips[60].tripId,20),
+            new Transport(Data_Storage.openTrips[61].tripId,15),
+            new Transport(Data_Storage.openTrips[62].tripId,15),
+            new Transport(Data_Storage.openTrips[63].tripId,20),
+            new Transport(Data_Storage.openTrips[64].tripId,20),
+            new Transport(Data_Storage.openTrips[65].tripId,30),
+            new Transport(Data_Storage.openTrips[66].tripId,30),
+            new Transport(Data_Storage.openTrips[67].tripId,25),
+            new Transport(Data_Storage.openTrips[68].tripId,25),
+            new Transport(Data_Storage.openTrips[69].tripId,25),
+            new Transport(Data_Storage.openTrips[70].tripId,30),
+            new Transport(Data_Storage.openTrips[71].tripId,30),
+
+            new Transport(Data_Storage.openTrips[72].tripId,20),
+            new Transport(Data_Storage.openTrips[73].tripId,15),
+            new Transport(Data_Storage.openTrips[74].tripId,15),
+            new Transport(Data_Storage.openTrips[75].tripId,20),
+            new Transport(Data_Storage.openTrips[76].tripId,20),
+            new Transport(Data_Storage.openTrips[77].tripId,30),
+            new Transport(Data_Storage.openTrips[78].tripId,30),
+            new Transport(Data_Storage.openTrips[79].tripId,25),
+            new Transport(Data_Storage.openTrips[80].tripId,25),
+            new Transport(Data_Storage.openTrips[81].tripId,25),
+            new Transport(Data_Storage.openTrips[82].tripId,30),
+            new Transport(Data_Storage.openTrips[83].tripId,30),
 
 
         };

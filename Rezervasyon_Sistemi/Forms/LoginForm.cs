@@ -3,6 +3,7 @@ using Rezervasyon_Sistemi.Models;
 using Rezervasyon_Sistemi.Models.Econ;
 using Rezervasyon_Sistemi.Models.Infrastructure;
 using Rezervasyon_Sistemi.Models.Vehicles;
+using Rezervasyon_Sistemi.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,8 +29,36 @@ namespace Rezervasyon_Sistemi.Forms
 
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
+        private async void LoginForm_Load(object sender, EventArgs e)
         {
+            //erisimi kapa ve biletleri asenkron olarak satın al
+            kullanıcıToolStripMenuItem.Enabled = false;
+            adminToolStripMenuItem.Enabled = false;
+            firmaToolStripMenuItem.Enabled = false;
+
+            Task[] tasks = new Task[2000];
+
+            for (int i = 0; i < 2000; i++)
+            {
+                // Her bir task'ı diziye ekle, ancak başlatma!
+                tasks[i] = Task.Run(ServiceClass.fillRandomSeats);
+            }
+
+            // Tüm task'ların tamamlanmasını bekleyin
+            await Task.WhenAll(tasks);
+
+            //Tüm biletler alındıktan sonra erişim ac
+            Console.WriteLine("\n\n\n\n\n\n\n\nTüm task'lar tamamlandı.");
+            loadingPanel.Visible = false;
+            kullanıcıToolStripMenuItem.Enabled = true;
+            adminToolStripMenuItem .Enabled = true;
+            firmaToolStripMenuItem .Enabled = true;
+
+
+            //Admin Paneli Ac
+            firma_panel.Visible = false;
+            admin_panel.Visible = true;
+            user_panel.Visible = false;
 
         }
 
@@ -216,5 +245,6 @@ namespace Rezervasyon_Sistemi.Forms
             }
 
         }
+
     }
 }

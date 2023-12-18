@@ -62,11 +62,14 @@
             this.dateComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.endPosComboBox = new System.Windows.Forms.ComboBox();
+            this.loadingPanel = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.admin_panel.SuspendLayout();
             this.firma_panel.SuspendLayout();
             this.user_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passangerCounterNum)).BeginInit();
+            this.loadingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -450,12 +453,31 @@
             this.endPosComboBox.Size = new System.Drawing.Size(187, 21);
             this.endPosComboBox.TabIndex = 12;
             // 
+            // loadingPanel
+            // 
+            this.loadingPanel.Controls.Add(this.label13);
+            this.loadingPanel.Location = new System.Drawing.Point(28, 27);
+            this.loadingPanel.Name = "loadingPanel";
+            this.loadingPanel.Size = new System.Drawing.Size(842, 513);
+            this.loadingPanel.TabIndex = 9;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label13.Location = new System.Drawing.Point(311, 229);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(244, 30);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Biletler Yükleniyor...";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 587);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.loadingPanel);
             this.Controls.Add(this.firma_panel);
             this.Controls.Add(this.admin_panel);
             this.Controls.Add(this.user_panel);
@@ -476,6 +498,8 @@
             this.user_panel.ResumeLayout(false);
             this.user_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.passangerCounterNum)).EndInit();
+            this.loadingPanel.ResumeLayout(false);
+            this.loadingPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,5 +541,7 @@
         private System.Windows.Forms.Button tripSearchButton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown passangerCounterNum;
+        private System.Windows.Forms.Panel loadingPanel;
+        private System.Windows.Forms.Label label13;
     }
 }
